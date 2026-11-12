@@ -127,7 +127,7 @@ ul,ol{margin:0;padding:0}
 .mx{width:100%;border-collapse:collapse;table-layout:fixed}
 .mx th,.mx td{padding:9px 6px;border-top:1px solid var(--line-2);text-align:left;vertical-align:middle}
 .mx thead th{background:var(--head);border-top:1px solid var(--line);font-weight:600;font-stretch:80%;font-size:.8125rem;line-height:1.2}
-.mx thead th.c{writing-mode:vertical-rl;transform:rotate(180deg);height:86px;text-align:left;padding:8px 0;vertical-align:middle}
+.mx thead th.c{text-align:center}
 .mx .c{width:11.5%;border-left:1px solid var(--line-2);padding-left:5px;padding-right:5px}
 .mx tbody th{font-weight:600;font-stretch:88%;line-height:1.25;padding-left:14px}
 .mx tbody th a{text-decoration:none}
@@ -406,6 +406,20 @@ ul,ol{margin:0;padding:0}
 .foot{margin-top:clamp(40px,6vw,72px);border-top:1px solid var(--line);padding:18px 0 28px;font-size:.8125rem;color:var(--ink-2)}
 .foot .wrap{display:grid;gap:4px}
 
+@media (max-width:559px){
+  .mxw{--x0:calc(100% - 225px)}
+  .mx,.mx thead,.mx tbody,.mx tfoot{display:block;width:100%}
+  .mx tr{display:grid;grid-template-columns:minmax(0,1fr) repeat(5,45px);align-items:stretch;border-top:1px solid var(--line-2)}
+  .mx thead tr{border-top:1px solid var(--line);background:var(--head)}
+  .mx tfoot tr{border-top:2px solid var(--ink)}
+  .mx th,.mx td{display:flex;flex-direction:column;justify-content:center;border-top:0;padding:9px 4px;min-width:0}
+  .mx tbody th,.mx tfoot th,.mx thead th:first-child{padding-left:14px}
+  .mx .c{width:auto;padding-left:4px;padding-right:4px}
+  .mx thead th.c{align-items:center;justify-content:flex-end;padding:8px 2px;font-size:.6875rem;font-stretch:72%;line-height:1.1;overflow-wrap:anywhere}
+  .mx tfoot .c{align-items:center}
+  .mx .loc,.mx .note{display:none}
+  .bar{width:100%}
+}
 @media (min-width:560px){
   .hero{grid-template-columns:minmax(0,1fr) 160px;gap:18px 24px}
   .id{grid-template-columns:112px minmax(0,1fr);gap:18px}
@@ -413,7 +427,7 @@ ul,ol{margin:0;padding:0}
   .hero h1 span{display:inline}
   .org{font-size:1.0625rem}
   .claim{font-size:1.75rem}
-  .mx thead th.c{writing-mode:horizontal-tb;transform:none;height:auto;padding:9px 6px}
+  .mx thead th.c{text-align:left;padding:9px 6px}
   .facts{gap:16px 24px}
   .facts li{font-size:.9375rem;padding-left:12px}
   .facts b{font-size:1.375rem}
